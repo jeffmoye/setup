@@ -21,8 +21,7 @@ source $HOME/.nvm/nvm.sh
 # (the original script loaded the latest version, which
 # was v0.10.12 at the time))
 echo [install node...]
-nvm ls-remote
-NODE_VER=v0.10.12
+NODE_VER=`nvm ls-remote | tail` 
 nvm install $NODE_VER
 nvm use $NODE_VER
 
