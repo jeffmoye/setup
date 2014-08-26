@@ -2,6 +2,8 @@
 # Simple setup.sh for configuring Ubuntu 14.04 LTS EC2 instance
 # for headless setup. 
 echo "~~~~~~~~~~~~~~~~~~~~setup.sh~~~~~~~~~~~~~~~~~~~~"
+echo [Firstly, update apt-get]
+sudo apt-get update
 
 # Install nvm: node-version manager
 # https://github.com/creationix/nvm
@@ -21,7 +23,8 @@ source $HOME/.nvm/nvm.sh
 echo [install node...]
 NODE_VER=v0.10.12
 nvm install $NODE_VER
-nvm use $NODE_VER
+nvm use 
+nvm ls
 
 # Install jshint to allow checking of JS code within emacs
 # http://jshint.com/
