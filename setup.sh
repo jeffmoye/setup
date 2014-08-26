@@ -1,6 +1,7 @@
 #!/bin/bash
 # Simple setup.sh for configuring Ubuntu 14.04 LTS EC2 instance
 # for headless setup. 
+echo "~~~~~~~~~~~~~~~~~~~~setup.sh~~~~~~~~~~~~~~~~~~~~"
 
 # Install nvm: node-version manager
 # https://github.com/creationix/nvm
@@ -60,3 +61,4 @@ ln -sb dotfiles/.bashrc .
 ln -sb dotfiles/.bashrc_custom .
 ln -sf dotfiles/.emacs.d .
 
+echo "~~~~~~~~~~~~~~~setup.sh complete~~~~~~~~~~~~~~~~"
