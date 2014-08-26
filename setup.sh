@@ -21,10 +21,10 @@ source $HOME/.nvm/nvm.sh
 # (the original script loaded the latest version, which
 # was v0.10.12 at the time))
 echo [install node...]
+nvm ls-remote
 NODE_VER=v0.10.12
 nvm install $NODE_VER
-nvm use 
-nvm ls
+nvm use $NODE_VER
 
 # Install jshint to allow checking of JS code within emacs
 # http://jshint.com/
