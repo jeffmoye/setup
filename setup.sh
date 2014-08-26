@@ -1,16 +1,20 @@
 #!/bin/bash
 # Simple setup.sh for configuring Ubuntu 14.04 LTS EC2 instance
 # for headless setup. 
+
+# update apt and install git and curl
 echo "~~~~~~~~~~~~~~~~~~~~setup.sh~~~~~~~~~~~~~~~~~~~~"
 echo [Firstly, update apt-get]
 sudo apt-get update
 
-# Install nvm: node-version manager
-# https://github.com/creationix/nvm
 echo [Install git...]
 sudo apt-get install -y git
+
 echo [Install curl...]
 sudo apt-get install -y curl
+
+# Install nvm: node-version manager
+# https://github.com/creationix/nvm
 echo [Install nvm...]
 git clone https://github.com/creationix/nvm.git ~/.nvm
 
@@ -19,9 +23,12 @@ echo [Load nvm...]
 source $HOME/.nvm/nvm.sh
 # ...and install a version of node
 # (the original script loaded the latest version, which
-# was v0.10.12 at the time))
+# was v0.10.12 at the time)). But we'll get the list
+# of installable versions and pick the last (which will
+# be the most recent)
 echo [install node...]
-NODE_VER=`nvm ls-remote | tail` 
+NODE_VER=`nvm ls-remote | tail`
+echo [...$NODE_VER...]
 nvm install $NODE_VER
 nvm use $NODE_VER
 
