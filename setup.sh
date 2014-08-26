@@ -4,36 +4,48 @@
 
 # Install nvm: node-version manager
 # https://github.com/creationix/nvm
+echo [Install git...]
 sudo apt-get install -y git
+echo [Install curl...]
 sudo apt-get install -y curl
-curl https://raw.github.com/creationix/nvm/master/install.sh | sh
+echo [Install nvm...]
+git clone https://github.com/creationix/nvm.git ~/.nvm
 
 # Load nvm 
+echo [Load nvm...]
 source $HOME/.nvm/nvm.sh
 # ...and install a version of node
+# (the original script loaded the latest version, which
+# was v0.10.12 at the time))
+echo [install node...]
 NODE_VER=v0.10.12
 nvm install $NODE_VER
 nvm use $NODE_VER
 
 # Install jshint to allow checking of JS code within emacs
 # http://jshint.com/
+echo [Install jshint...]
 npm install -g jshint
 
 # Install rlwrap to provide libreadline features with node
 # See: http://nodejs.org/api/repl.html#repl_repl
+echo [Install rlwrap...]
 sudo apt-get install -y rlwrap
 
 # Install emacs24
 # https://launchpad.net/~cassou/+archive/emacs
+echo [Install emacs...]
 sudo add-apt-repository -y ppa:cassou/emacs
 sudo apt-get -qq update
 sudo apt-get install -y emacs24-nox emacs24-el emacs24-common-non-dfsg
 
 # Install Heroku toolbelt
 # https://toolbelt.heroku.com/debian
+echo [Install heroku toolbelt...]
 wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh | sh
 
 # git pull and install dotfiles as well
+echo [Setup dotfiles....]
 cd $HOME
 if [ -d ./dotfiles/ ]; then
     mv dotfiles dotfiles.old
