@@ -29,6 +29,8 @@ source $HOME/.nvm/nvm.sh
 echo [Install node...]
 echo [The avaliable versions are...]
 nvm ls-remote
+# Pick a version to install.
+# Remember to change this version in dotfiles/.bashrc too!
 NODE_VER=v0.11.13
 echo [Version to install = $NODE_VER...]
 nvm install $NODE_VER
