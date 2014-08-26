@@ -1,3 +1,4 @@
+#!/bin/bash
 cd ~
 rm -rf .cache
 rm -rf .nvm
