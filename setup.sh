@@ -26,9 +26,11 @@ source $HOME/.nvm/nvm.sh
 # was v0.10.12 at the time)). But we'll get the list
 # of installable versions and pick the last (which will
 # be the most recent)
-echo [install node...]
-NODE_VER=`nvm ls-remote | tail`
-echo [...$NODE_VER...]
+echo [Install node...]
+echo [The avaliable versions are...]
+nvm ls-remote
+NODE_VER=v0.11.13
+echo [Version to install = $NODE_VER...]
 nvm install $NODE_VER
 nvm use $NODE_VER
 
