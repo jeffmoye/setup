@@ -76,3 +76,6 @@ ln -sb dotfiles/.inputrc .
 ln -sf dotfiles/.emacs.d .
 
 echo "~~~~~~~~~~~~~~~setup.sh complete~~~~~~~~~~~~~~~~"
+echo
+echo "Now please logout. Some customisations will only"
+echo "have effect when you log back in."
